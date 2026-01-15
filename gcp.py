@@ -507,7 +507,7 @@ def delete_free_resources(project_id, instance_info):
     zone = instance_info["zone"]
 
     print("\n------------------------------------------------")
-    print("即将删除以下资源（用于避免产生费用）：")
+    print("即将删除以下资源（可以重新创建免费资源）：")
     print(f"- 实例: {instance_name} ({zone})")
     print(f"- 相关磁盘（如仍存在）")
     print(f"- 防火墙规则: {', '.join(FIREWALL_RULES_TO_CLEAN)}")
@@ -686,7 +686,7 @@ def run_remote_script(project_id, instance_info, script_key, remote_config):
 
 def select_traffic_monitor_script():
     print("\n--- 请选择流量监控脚本 ---")
-    print("[1] 安装 iptables 流量监控 (net_iptables.sh)")
+    print("[1] 安装 超额关闭 ssh 之外其他入站 (net_iptables.sh)")
     print("[2] 安装 超额自动关机 (net_shutdown.sh)")
     print("[0] 返回")
     while True:
@@ -771,7 +771,7 @@ def main():
         print("[2] 选择服务器")
         print("[3] 刷 AMD CPU (当前服务器)")
         print("[4] 配置防火墙规则")
-        print("[5] 换源")
+        print("[5] Debian换源")
         print("[6] 安装 dae")
         print("[7] 上传 config.dae 并启用 dae")
         print("[8] 安装流量监控脚本")
