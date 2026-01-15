@@ -10,14 +10,6 @@ SOURCE_FILE="/etc/apt/sources.list.d/debian.sources"
 
 echo "=== 正在换源 ==="
 
-# 1. 备份
-if [ -f "$SOURCE_FILE" ]; then
-    cp "$SOURCE_FILE" "${SOURCE_FILE}.bak_fix_$(date +%Y%m%d_%H%M%S)"
-fi
-
-# 2. 写入混合配置
-# 主源 (Main): 继续使用 MIT (mirrors.mit.edu)
-# 安全源 (Security): UC Berkeley (mirrors.ocf.berkeley.edu)
 
 cat > "$SOURCE_FILE" <<EOF
 Types: deb deb-src
@@ -41,7 +33,7 @@ echo "-> 正在更新源..."
 apt update
 
 if [ $? -eq 0 ]; then
-    echo "=== 完美！所有源均已连接成功，且未使用 Fastly CDN ==="
+    echo "=== 完美！所有源均已连接成功"
 else
     echo "=== 仍然有错误，请检查网络或尝试其他镜像 ==="
 fi

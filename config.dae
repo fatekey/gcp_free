@@ -1,0 +1,38 @@
+global{
+    log_level: info
+    wan_interface: auto
+    lan_interface: docker0
+    auto_config_kernel_parameter: true
+    allow_insecure: true
+}
+dns {
+    upstream {
+        googledns: 'tcp+udp://dns.google:53'
+    }
+    routing {
+        request {
+            fallback: googledns
+        }
+    }
+}
+
+group {
+    my_group{
+        policy: min
+    }
+}
+routing{
+    pname(NetworkManager) -> direct
+    dip(geoip:cdnip) -> my_group
+
+    fallback: direct
+}
+node{
+    # 在下面填入你的节点链接。
+    # free1:'vless://xxx'
+}
+
+subscription {
+    # 在下面填入你的订阅链接。
+    my_sub: 'https://www.example.com/subscription/link'
+}

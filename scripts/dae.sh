@@ -139,7 +139,7 @@ get_download_urls() {
         bash_completion_url="https://cdn.jsdelivr.net/gh/daeuniverse/dae@$latest_version/install/shell-completion/dae.bash"
         zsh_completion_url="https://cdn.jsdelivr.net/gh/daeuniverse/dae@$latest_version/install/shell-completion/dae.zsh"
         fish_completion_url="https://cdn.jsdelivr.net/gh/daeuniverse/dae@$latest_version/install/shell-completion/dae.fish"
-        geoip_url="https://cdn.jsdelivr.net/gh/v2rayA/dist-v2ray-rules-dat/geoip.dat"
+        geoip_url="https://github.com/fatekey/gcp_free/raw/master/geoip.dat"
         geosite_url="https://cdn.jsdelivr.net/gh/v2rayA/dist-v2ray-rules-dat/geosite.dat"
     else
         systemd_service_url="https://github.com/daeuniverse/dae/raw/$latest_version/install/dae.service"
@@ -150,7 +150,7 @@ get_download_urls() {
         bash_completion_url="https://github.com/daeuniverse/dae/raw/$latest_version/install/shell-completion/dae.bash"
         zsh_completion_url="https://github.com/daeuniverse/dae/raw/$latest_version/install/shell-completion/dae.zsh"
         fish_completion_url="https://github.com/daeuniverse/dae/raw/$latest_version/install/shell-completion/dae.fish"
-        geoip_url="https://github.com/v2rayA/dist-v2ray-rules-dat/raw/master/geoip.dat"
+        geoip_url="https://github.com/fatekey/gcp_free/raw/master/geoip.dat"
         geosite_url="https://github.com/v2rayA/dist-v2ray-rules-dat/raw/master/geosite.dat"
     fi
 }
