@@ -71,8 +71,8 @@ fi
 # 输出格式示例: 1;ens4;2026-01-15;RX_BYTES;TX_BYTES;...
 VNSTAT_RAW=\$(vnstat -i "\$INTERFACE" --oneline b 2>/dev/null)
 
-# 提取出站流量 (TX)，第 5 个字段
-TX_BYTES=\$(echo "\$VNSTAT_RAW" | cut -d ';' -f 5)
+# 提取出站流量 (TX)，第 10 个字段
+TX_BYTES=\$(echo "\$VNSTAT_RAW" | cut -d ';' -f 10)
 
 # 如果获取失败或为空，默认为 0
 if [[ -z "\$TX_BYTES" ]]; then
